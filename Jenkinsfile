@@ -6,18 +6,18 @@ pipeline {
     stages {
         stage('clean') { 
             steps {
-                    sh 'rm -rf PipelineCode'
-                    sh 'mvn clean -f PipelineCode '
+                    
+                    bat 'mvn clean -f PipelineCode '
             }
         }
         stage('Test') { 
             steps {
-                sh 'mvn test -f PipelineCode'
+                bat 'mvn test -f PipelineCode'
             } 
         }
         stage('Deploy') { 
             steps {
-               sh 'mvn package -f PipelineCode' 
+               bat 'mvn package -f PipelineCode' 
             }
         }
     }
